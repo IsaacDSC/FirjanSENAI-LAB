@@ -1,7 +1,7 @@
 const express = require('express')
-const hbs = require ('express-handlebars')
+const hbs = require('express-handlebars')
 const path = require('path')
-const session = require ('express-session')
+const session = require('express-session')
 const flash = require('express-flash')
 const cors = require('cors')
 
@@ -9,7 +9,7 @@ const router = require('../routes/routes')
 
 
 class App {
-   constructor() {
+    constructor() {
         this.express = express()
         this.midlewares()
         this.routes()
@@ -19,7 +19,7 @@ class App {
         this.engine()
     }
 
-     midlewares(){
+    midlewares() {
         //this.express.use(bodyParser.urlencoded({ extended: true }))
         //this.express.use(bodyParser.json())
         this.express.use(express.json())
@@ -31,10 +31,10 @@ class App {
     }
 
     static() {
-        this.express.use(express.static(path.join(__dirname, 'public')))
+        this.express.use(express.static(path.join(__dirname, '../', 'public')))
     }
 
-     session() {
+    session() {
         this.express.use(session({
             secret: 'secret',
             resave: true,
@@ -47,7 +47,7 @@ class App {
         this.express.use(passport.session())
     }
 
- flash() {
+    flash() {
         //config Flahs
         this.express.use(flash())
         //config midleware flash
@@ -60,13 +60,12 @@ class App {
         })
 
     }
-     engine() {
-    const app = express()
-       app.engine('hbs', hbs({ extname: 'hbs', defaultLayout: 'main' }));
-       app.set('views', __dirname + '/views');
-       app.set('view engine', 'hbs');
+    engine() {
+        this.express.engine('hbs', hbs({ extname: 'hbs', defaultLayout: 'main' }));
+        this.express.set('view engine', 'hbs');
+        this.express.set("views", path.join(__dirname, '../', "/views/"))
     }
 }
 
 
-module.exports =  new App().express
+module.exports = new App().express
