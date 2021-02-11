@@ -1,0 +1,68 @@
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">Produtos mais vendido</h3>
+
+        <div class="card-tools">
+            <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                <i class="fas fa-minus"></i>
+            </button>
+            <button type="button" class="btn btn-tool" data-card-widget="remove">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="chart-responsive">
+                    <canvas id="pieChart" height="150"></canvas>
+                </div>
+                <!-- ./chart-responsive -->
+            </div>
+            <!-- /.col -->
+            <div class="col-md-12 mt-2">
+            <hr>
+                <ul class="chart-legend clearfix">
+                    <li><i class="far fa-circle text-danger"></i> BootWhatsApp</li>
+                    <li><i class="far fa-circle text-success"></i> Ecommerce</li>
+                    <li><i class="far fa-circle text-warning"></i> Bot and Ecommerce</li>
+                    <li><i class="far fa-circle text-info"></i> Safari</li>
+                    <li><i class="far fa-circle text-primary"></i> Opera</li>
+                </ul>
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.card-body -->
+    <div class="card-footer bg-white p-0">
+        <ul class="nav nav-pills flex-column">
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    Todos Estados
+                    <span class="float-right text-danger">
+                        <i class="fas fa-arrow-up text-sm"></i>
+                        12%</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    São Paulo
+                    <span class="float-right text-success">
+                        <i class="fas fa-arrow-up text-sm"></i> 4%
+                    </span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    Rio de janeiro
+                    <span class="float-right text-warning">
+                        <i class="fas fa-arrow-left text-sm"></i> 0%
+                    </span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- /.footer -->
+</div>

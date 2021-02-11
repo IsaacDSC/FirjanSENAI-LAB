@@ -1,0 +1,98 @@
+<div class="modal" tabindex="-1" id="addClass">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Cadastre a Classe de seu Cardápio</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="/config/classe" method="POST">
+                    <div class="row">
+                        <div class="form-group col-8">
+                            <label for="">Cadastre a Classe do alimento para Venda <small>(Ex: Bebidas, Lanches,
+                                    Pizzas,
+                                    etc..)</small></label>
+                            <input type="hidden" name="teste" value="1">
+                            <input type="text" name="classe" id="class" class="form-control"
+                                placeholder="Digite aqui a Classe a ser cadastrada">
+                        </div>
+                        <div class="form-group col-4 mt-4">
+                            <br>
+                            <button class="btn btn-info col-8 mt-2">Enviar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal" tabindex="-1" id="editClass">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Editar Classe Cardápio</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                {{#if classe}}
+                {{#each classe}}
+                <form action="/config/classe/edit" method="post">
+                    <hr>
+                    <div class="row mt-1">
+                        <div class="col-8">
+                            <input type="hidden" name="id" value="{{id}}">
+                            <input type="text" name="classe" class="form-control" value="{{classMenu}}">
+                        </div>
+                        <div class="col-3">
+                            <button class="btn btn-warning col-12">Editar</button>
+                        </div>
+                    </div>
+                    <hr>
+                </form>
+                {{/each}}
+                {{else}}
+                <h3 class="text-center">Você aida não possui classes no cardápio, vá em configurações e cadastre.
+                </h3>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal" tabindex="-1" id="dellClass">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Deletar Classe Cardápio</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                {{#if classe}}
+                {{#each classe}}
+                <form action="/config/classe/delete" method="post">
+                    <hr>
+                    <div class="row mt-1">
+                        <div class="col-8">
+                            <input type="hidden" name="id" value="{{id}}">
+                            <h5>{{id}}-{{classMenu}}</h5>
+                        </div>
+                        <div class="col-3">
+                            <button class="btn btn-danger col-12">Apagar</button>
+                        </div>
+                    </div>
+                    <hr>
+                </form>
+                {{/each}}
+                {{else}}
+                <h3 class="text-center">Você aida não possui classes no cardápio, vá em configurações e cadastre.
+                </h3>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+</div>

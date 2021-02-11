@@ -1,0 +1,89 @@
+{{#each DETAILS}}
+<div class="modal" tabindex="-1" role="dialog" id="maisPedido{{this.order}}">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Pedido nº {{this.order}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="btn-group col-12" role="group" aria-label="Basic example">
+                            <button type="button" class="btn btn-info" data-toggle="modal"
+                                data-target="#modalPedido">Editar</button>
+                            <button type="button" class="btn btn-secondary" onclick="imprimir()">Imprimir</button>
+                            <button type="button" class="btn btn-danger">Cancelar</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mt-2" id="IMPRIMIR">
+                    <div class="container">
+                        <h4 class="text-center">Pedido</h4>
+                        <hr>
+                        <div class="row">
+                            <div class="col-6">
+                                <h5 class="text-center"><Strong><i class="fas fa-user-circle"></i></Strong>
+                                    {{this.name}}</h5>
+                            </div>
+                            <div class="col-6">
+                                <h5 class="text-center"><Strong><i class="fas fa-mobile-alt"></i></Strong>
+                                    {{this.telephone}}
+                                </h5>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-12">
+                                <h5>Bairro: <small>{{this.neighborhood}}</small></h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <h5>Endereço: <small> {{this.address}}</small> </h5>
+                            </div>
+
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Item</th>
+                                        <th scope="col">Descrição</th>
+                                        <th scope="col">Quantidade</th>
+                                        <th scope="col">Valor</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="insertDadosPedido{{this.order}}">
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col">
+                                <h6 class="text-center"><i class="fas fa-wallet"></i>: {{dinheiro this.subtotal}} </h6>
+                                <h6 class="text-center"><i class="fas fa-motorcycle"></i>: {{dinheiro this.valueDelivery}}</h6>
+                            </div>
+                            <div class="col">
+                                <h6 class="text-center"><i class="fas fa-coins"></i>: {{dinheiro this.changeMoney}}</h6>
+                                <h6 class="text-center"><i class="fas fa-money-bill-wave"></i> {{this.payment}}</h6>
+                            </div>
+                        </div>
+                        <hr>
+                        <h5 class="text-center"><strong>Total:</strong>  <span class="total{{this.order}}"></span></h5>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+{{/each}}

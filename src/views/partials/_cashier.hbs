@@ -1,0 +1,146 @@
+{{>_finalitySales}}
+<div class="row" id="SALES">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title">
+                    - Montar Pedidos -
+
+                </h5>
+                <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                    {{!-- <div class="btn-group">
+                        <button type="button" class="btn btn-tool dropdown-toggle" data-toggle="dropdown">
+                            <i class="fas fa-wrench"></i>
+                            </butto>
+                            <div class="dropdown-menu dropdown-menu-right" role="menu">
+                                <a href="#" class="dropdown-item">Action</a>
+                                <a href="#" class="dropdown-item">Another action</a>
+                                <a href="#" class="dropdown-item">Something else here</a>
+                                <a class="dropdown-divider"></a>
+                                <a href="#" class="dropdown-item">Separated link</a>
+                            </div>
+                    </div>
+                    <button type="button" class="btn btn-tool" data-card-widget="remove">
+                        <i class="fas fa-times"></i>
+                    </button> --}}
+                </div>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+                <div class="container">
+                    {{>_modalClient}}
+                    <div class="dashboard-wrapper " id="fundo">
+                        <div class="container-fluid  dashboard-content" id="fundo">
+                            {{>_msg}}
+                            <div class="card-deck mt-1">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-sm-8 mt-1">
+                                            <form action="/cashier/search" method="post">
+                                                <div class="row">
+                                                    <div class="col-sm-12 col-md-12 col-xl-12 mt-1">
+                                                        <select name="classe" id="classe" class="form-control">
+                                                            <option value="">Selecione</option>
+                                                            {{#each classes}}
+                                                            <option value="{{classMenu}}">{{classMenu}}</option>
+                                                            {{/each}}
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                            <hr>
+
+                                            <div class="adicionarPedido">
+
+                                            </div>
+
+
+                                            {{!-- <div class="row">
+                                                <div class="row col-6">
+                                                    <div class="form-group col-12">
+                                                        <label for="" class="ml-1">Observação</label>
+                                                        <textarea id="obsClienteCaixa" cols="30" rows="10"
+                                                            class="form-control col-12 ml-2" style="height: 100px;"
+                                                            style="background-color: rgba(236, 236, 236, 0.418);"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="row col-6">
+                                                    <div class="form-group col-12 mt-4 ml-2">
+                                                        <button class="btn btn-outline-dark col-12"
+                                                            id="enviaraoCarrinho">Enviar
+                                                            Carrinho</button>
+                                                    </div>
+                                                </div>
+                                            </div> --}}
+                                        </div>
+
+
+                                        {{!--==================================== CArrinho de
+                                        compra=========================================== --}}
+                                        <div class="col-sm-12 col-md-12 col-xl-4">
+                                            <div class="card">
+                                                <div class="container">
+                                                    <h4 class="text-center mt-3"><strong><i
+                                                                class="fas fa-shopping-cart"></i></strong> Carrinho de
+                                                        Compras</h4>
+                                                    <hr>
+                                                </div>
+                                                <div class="card-body">
+                                                    <h6 class="text-center mt-2" id="clientCarrinho"></h6>
+                                                    <hr>
+                                                    <div class="row">
+                                                        <div class="form-group ml-2" id="itensNoCarrinho">
+                                                        </div>
+                                                    </div>
+                                                    <hr>
+                                                    <div class="col">
+                                                        <div class="mt-1" id="totalTaxaSub">
+                                                            <h5 class="aling-left"> <i class="fas fa-piggy-bank"></i>
+                                                                SubTotal: <span id="subtotalValue">R$ 0,00 </span></h5>
+                                                            <h5 class="aling-left"> <i class="fas fa-motorcycle"></i>
+                                                                Taxa de Entrega: <span id="taxaEntrega">R$ 0,00 </span></h5>
+                                                            <h4 class="aling-left"><strong><i
+                                                                        class="fas fa-money-bill-wave"></i>
+                                                                    Total: </strong><span id="totalValue">R$ 0,00 </span>
+                                                        </div>
+                                                        <hr>
+                                                    </div>
+                                                    <button type="submit" class="btn btn-outline-dark col-12"
+                                                        data-toggle="modal" onclick="$('#MeuModal').modal('show')">
+                                                        Cliente
+                                                    </button>
+                                                    <button type="button" class="btn btn-danger col-12 mt-2"
+                                                        id="finalizarPedidoDoCashier" data-bs-toggle="modal"
+                                                        data-bs-target="#finaly">Finalizar</button>
+                                                    <br>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ============================================================== -->
+                    <!-- end horizontal form -->
+                    <!-- ============================================================== -->
+
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                    <script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
+                    <script>
+
+                        jQuery('.dinheiro').mask('#.##0,00', { reverse: true, });
+
+                    </script>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/cashier.js"></script>
+

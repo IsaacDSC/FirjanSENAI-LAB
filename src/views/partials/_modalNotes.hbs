@@ -1,0 +1,37 @@
+<div class="modal" tabindex="-1" id="modalNotes" style="background-color: rgba(0, 0, 0, 0.842);">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Lembrete</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="/notes" method="post">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="color">Escolha a cor do bloco</label>
+                        <select name="color" id="color" class="form-control">
+                            <option value="light">Branco</option>
+                            <option value="decondary">Cinza</option>
+                            <option value="dark">Preto</option>
+                            <option value="info">Azul Claro</option>
+                            <option value="primary">Azul Escuro</option>
+                            <option value="success">Verde</option>
+                            <option value="warning">Amarelo</option>
+                            <option value="danger">Vermelho</option>
+                        </select>
+                        <label for="subject">Adione o assunto</label>
+                        <input type="text" name="subject" class="form-control">
+                        <label for="title">Adione o titulo</label>
+                        <input type="text" name="title" class="form-control">
+                        <label for="desc">Adione a descrição</label>
+                        <textarea name="desc" id="desc" cols="30" rows="5" class="form-control"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

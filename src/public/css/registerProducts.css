@@ -1,0 +1,143 @@
+.title {
+    font-size: 25px;
+    padding-top: 15px;
+    padding-bottom: 10px;
+}
+
+.product {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.price h2 {
+    color: #F23C6D;
+    font-size: 30px;
+    font-weight: 400;
+    padding-bottom: 10px;
+}
+
+.price>div>p {
+    color: #F23C6D;
+    font-size: 17px;
+    font-weight: 400;
+    padding-bottom: 10px;
+}
+
+#sub-imagens {
+    border: 8px double #F5DFE5;
+    padding: 7px;
+}
+
+.quantity {
+    justify-content: center;
+}
+
+.productdados {}
+
+.desc {
+    font-weight: 400;
+    line-height: 28.8px;
+    font-size: 16px;
+}
+
+.descricao {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.classes>li {
+    border-top: 2px solid #F23C6D;
+    border-bottom: 2px solid #F23C6D;
+}
+
+.sub-imagens {
+    max-width: 25%;
+}
+
+.imgProducts {
+    border: 8px double #F5DFE5;
+    margin-right: 10px;
+}
+
+.imgGrande {
+    border: 8px double #F5DFE5;
+}
+
+.pRelacionados {
+    border: 4px solid #F5DFE5;
+    padding: 10px;
+}
+
+.price {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border: 4px solid #F5DFE5;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.quantity-input:focus {
+    background: red;
+}
+
+.quantity-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    border-radius: 3px;
+    margin-top: 10px;
+    width: 100px;
+    margin-bottom: 10px;
+}
+
+.quantity-input__modifier,
+.quantity-input__screen {
+    user-select: none;
+    outline: none;
+}
+
+.quantity-input__modifier:hover {
+    background: darken(#f3f3f3, 10%);
+    color: darken(#888, 20%)
+}
+
+.quantity-input--right {
+    border-radius: 0 3px 3px 0;
+}
+
+.quantity-input--left {
+    border-radius: 3px 0 0 3px;
+}
+
+.quantity-input__modifier {
+    outline: inherit !important;
+    font-size: 1.5rem;
+    background: #f0e9e9;
+    color: #888;
+    border: 3px;
+    text-align: center;
+    text-shadow: 0 1px 0 rgba(rgb(99, 61, 61), .6);
+    cursor: pointer;
+}
+
+.quantity-input__screen {
+    width: 2rem;
+    padding: .5rem;
+    font-size: 1.0rem;
+    border: 0;
+    border-top: 0 solid #dbdbdb;
+    border-bottom: 0 solid #dbdbdb;
+    text-align: center;
+}
+
+.btnform {
+    border: none;
+    background-color: rgb(255, 255, 255);
+}
+
+.btnform :hover {
+    border: 1px solid rgb(255, 255, 255);
+    background-color: rgb(255, 255, 255);
+}

@@ -1,0 +1,39 @@
+<div class="modal" tabindex="-1" id="DeleteEmployeed">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Gerenciamento de acesso.</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body mb-5">
+                <div class="row">                
+                    {{#each admins}}
+                    <div class=" col-sm-12 col-xl-6 mt-2">
+                        <form action="/config/employees/delete" method="post">
+                            <h3 class="text-center">
+                                <i class="fas fa-user"></i>
+                            </h3>
+                            <h5 class="text-center"><small>{{!-- {{id}}- --}}{{name}}</small></h5>
+                            <input type="hidden" name="employeed" value="{{name}}">
+                            <div class="row mt-2">
+                                <div class="col"></div>
+                                <div class="col-3">                                                                      
+                                    <button class="btn btn-danger col-12" style="border-radius: 50%;" onclick="deletarUser(event,'{{username}}')">
+                                        <i class="fas fa-times"></i>
+                                    </button>                                   
+                                </div>
+                                <div class="col"></div>
+                            </div>
+                            <hr>
+                        </form>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/deleteEmploye.js"></script>

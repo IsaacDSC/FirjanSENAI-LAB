@@ -1,0 +1,209 @@
+{{>_configClassMenu}}
+{{>_DeleteEmployees}}
+<style>
+    @media only screen and (max-width: 600px) {
+        #btngroup {
+            flex-wrap: wrap;
+        }
+    }
+</style>
+<div class="container">
+    <div class="card-body mt-3">
+        {{>_msg}}
+    </div>
+</div>
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <div class="container">
+            </div>
+            <h5 class="text-center">Configure as Mensagens</h5>
+            <div class="row mt-3">
+                <div class="col"></div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 col-xxl-2 mt-1 ">
+                    <button type="button" class="btn btn-primary col-sm-12" data-bs-toggle="modal"
+                        data-bs-target="#Welcome">Boas Vindas</button>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 col-xxl-2 mt-1 "><button type="button"
+                        class="btn btn-primary col-sm-12" data-bs-toggle="modal" data-bs-target="#preparation">Em
+                        preparo</button></div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 col-xxl-2 mt-1 ">
+                    <button type="button" class="btn btn-primary col-sm-12" data-bs-toggle="modal"
+                        data-bs-target="#delivering">Saiu para entrega</button>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 col-xxl-2 mt-1 ">
+                    <button type="button" class="btn btn-primary col-sm-12" data-bs-toggle="modal"
+                        data-bs-target="#delivered">Entregue</button>
+                </div>
+                <div class="col"></div>
+            </div>
+        </div>
+    </div>
+</div>
+{{>_modalMessages}}
+
+
+<div class="container" id="config">
+    <div class="card">
+        <div class="card-body">
+            <h5>Configurações Gerais</h5>
+            <hr>
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-xl-6">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-12 col">
+                            <div class="form-group ">
+                                <h6 class="text-left">Ativar Mensagens<small><br>(Caso ative você deverá cadastrar as
+                                        mensagens)</small></h6>
+                                <div class="col-sm-12">
+                                    <div class="page-header float-left">
+                                        <div class="page-title">
+                                            <ol class="breadcrumb text-right">
+                                                <p>Desativar/Ativar &nbsp;&nbsp;</p>
+                                                <label class="switch">
+                                                    {{#if (valorTrue this.neighborhood)}}
+                                                    <input type="checkbox" id="configBairro" checked data-toggle="modal"
+                                                        style="color: black;">
+                                                    {{else}}
+                                                    <input type="checkbox" id="configBairro" data-toggle="modal"
+                                                        style="color: black;">
+                                                    {{/if}}
+                                                    <span class="slider round"></span>
+                                                </label>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-12 col">
+                            <div class="form-group">
+                                <h6 class="text-left">Primeira mensagem <small><br>(
+                                        Caso ative você de verá configurar a menssagem inicial
+                                        )</small></h6>
+                                <div class="col-sm-12">
+                                    <div class="page-header float-left">
+                                        <div class="page-title">
+                                            <ol class="breadcrumb text-right">
+                                                <p>Desativar/Ativar &nbsp;&nbsp;</p>
+                                                <label class="switch">
+                                                    {{#if (valorTrue this.description)}}
+                                                    <input type="checkbox" id="descricaoProduto" checked
+                                                        data-toggle="modal" style="color: black;">
+                                                    {{else}}
+                                                    <input type="checkbox" id="descricaoProduto" data-toggle="modal"
+                                                        style="color: black;">
+                                                    {{/if}}
+                                                    <span class="slider round"></span>
+                                                </label>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row col-sm-12 col-md-12 col-12 mt-3">
+                            <div class="col">
+                                <h4 class="text-left">Configurações Classes de Cardápios</h4>
+                                <hr>
+                                <div class="row mt-3">
+                                    <div class="col">
+                                        <button type="button" class="btn btn-outline-dark col-12" data-toggle="modal"
+                                            data-target="#addClass" style="border-radius: 5px;">Cadastar</button>
+                                    </div>
+                                    <div class="col">
+                                        <button type="button" class="btn btn-outline-dark col-12" data-toggle="modal"
+                                            data-target="#editClass" style="border-radius: 5px;">Editar</button>
+                                    </div>
+                                    <div class="col">
+                                        <button type="button" class="btn btn-outline-dark col-12" data-toggle="modal"
+                                            data-target="#dellClass" style="border-radius: 5px;">Apagar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+                <div class="col-lg-6 col-sm-12">
+                    <h4 class="text-left"> Registrar Funcionários</h4>
+                    <hr>
+                    <form action="/config/employee/register" method="post">
+                        <div class="row">
+                            <div class="col">
+                                <label for="">Username</label>
+                                <input type="text" name="username" class="form-control"
+                                    placeholder="Digite o username do funcionário" name="">
+                            </div>
+                            <div class="col">
+                                <label for="">Telefone</label>
+                                <input type="text" name="telephone" class="form-control"
+                                    placeholder="Digite o telefone do funcionário" name="">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <label for="">Nome</label>
+                                <input type="text" name="name" class="form-control"
+                                    placeholder="Digite o nome do funcionário" name="">
+                            </div>
+                        </div>
+                        <div class="row mt-1">
+                            <div class="col">
+                                <input type="checkbox" name="superuser" value="true">
+                                <span class="ml-1"> Conceder Permissões de Administrador</span>
+                                <p><strong>Primeiro acesso: </strong><small>Primeira senha do funcioário é o
+                                        telefone</small></p>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col"></div>
+                            <div class="col-8">
+                                <button class="btn btn-dark col-12">Registrar</button>
+                            </div>
+                            <div class="col"></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <div class="row mt-3">
+                <div class="col">
+                    <h4>Dar baixa em funcionário</h4>
+                    <hr>
+                    <div class="row">
+                        <div class="col"></div>
+                        <div class="col-8">
+                            <button type="button" class="btn btn-outline-danger col-12" data-bs-toggle="modal"
+                        data-bs-target="#DeleteEmployeed">Retirar do sistema</button>
+                        </div>
+                        <div class="col"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col"></div>
+                <div class="col">
+                    {{>_mercadoPago}}
+                </div>
+                <div class="col"></div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<script src="/scripts/socket.js"></script>

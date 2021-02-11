@@ -1,0 +1,85 @@
+<div class="modal fade" tabindex="-1" id="MeuModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Adicione os dados do Cliente</h5>
+                <button type="button" class="close" data-dismiss="modal" onclick="$('#MeuModal').modal('hide')"
+                    aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="form-group col-sm-12 col-md-12 col-lg-12 col-lx-12">
+                        <select name="telephone" id="telephone" class="form-control">
+                            {{#if clients}}
+                            <option value="">Selecione o Cliente</option>
+                            {{#each clients}}
+                            <option value="{{name}}">{{name}} - {{trataTelephone telephone}}</option>
+                            {{/each}}
+                            {{else}}
+                            <option value="">Você ainda não possui clientes cadastrados! 😥</option>
+                            {{/if}}
+                        </select>
+                    </div>
+
+                </div>
+                <hr>
+                <div class="container">
+                    <form action="/cashier/insert/client" method="post" id="postClientes">
+                        <div class="row mt-3">
+                            <div class="form-group col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                                <label for="" class="ml-2">Nome do Cliente</label>
+                                <input type="text" id="name" name="nomecli" class="form-control ml-2">
+                            </div>
+                            <div class="form-group col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                                <label for="" class="ml-2">Numero Telefone do Cliente</label>
+                                <input type="text" name="telephone" id="telephonecli" class="form-control ml-2">
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-sm-12 col-md-8 col-lg-8 col-xl-8">
+                                <label for="" class="">Bairro</label>
+                                <input type="text" name="neighborhood" id="neighborhood" class="form-control">
+                            </div>
+                            <div class="form-group col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                                <label for="" class="">Taxa De Entrega</label>
+                                <input type="text" name="delivered" id="delivered" class="form-control dinheiro"
+                                    maxlength="6">
+                            </div>
+                            <div class="form-group col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                                <label for="" class="">Endereço</label>
+                                <input type="text" name="adress" id="address" class="form-control ">
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row mt-2">
+                            <div class="col"></div>
+                            <div class="col">
+                                <button type="submit" id="enviarClient" class="btn btn-primary col-12">Enviar</button>
+                            </div>
+                            <div class="col"></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            {{!-- <div class="modal-footer">
+               <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                    onclick="$('#MeuModal').modal('hide')">Fechar</button>
+
+            </div> --}}
+        </div>
+    </div>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
+<script>
+
+    jQuery('.dinheiro').mask('#.##0,00', { reverse: true, });
+
+</script>
+
+<script src="/js/cadastrarPessoa.js"></script>

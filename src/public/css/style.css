@@ -1,0 +1,42 @@
+#areaMessage {
+    background-color: rgba(0, 0, 0, 0.568);
+}
+
+#imgFundo {
+    position: absolute;
+    /* max-height: 1200px;
+    min-width: 100%; */
+}
+
+#labelBranco {
+    color: white;
+}
+
+footer {
+    margin-top: 450px;
+    height: 150px;
+    position: absolute;
+    background-color: rgba(73, 73, 73, 0.555);
+    width: 100%;
+    color: white;
+}
+
+
+/*
+.content-wrapper,
+.container-fluid,
+.content-header,
+.content,
+.container,
+.card,
+.card-body,
+.row,
+.col,
+.card-header,
+.info-box,
+.modal-content,
+.modal-dialog,
+body {
+    background-color: black;
+    color: rgb(126, 126, 126);
+} */

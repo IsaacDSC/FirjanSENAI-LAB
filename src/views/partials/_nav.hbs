@@ -1,0 +1,89 @@
+<nav class="main-header navbar navbar-expand navbar-white navbar-light">
+  <!-- Left navbar links -->
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+    </li>
+    {{!-- <li class="nav-item d-none d-sm-inline-block">
+      <a href="index3.html" class="nav-link">Home</a>
+    </li>
+    <li class="nav-item d-none d-sm-inline-block">
+      <a href="#" class="nav-link">Contact</a>
+    </li> --}}
+  </ul>
+
+  <!-- SEARCH FORM -->
+  <div class="row" style="margin-left: 3%;">
+    <i class="far fa-calendar-alt mt-1"><strong id="Date"> </strong></i>
+    <i class="far fa-clock mt-1 ml-3"><strong id="horas"> </strong></i>
+
+    <div id="horas">
+    </div>
+  </div>
+
+  <!-- Right navbar links -->
+  <ul class="navbar-nav ml-auto">
+    <!-- Messages Dropdown Menu -->
+    <!-- Notifications Dropdown Menu -->
+        {{!-- <li class="nav-item">
+      <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+        <i class="fas fa-expand-arrows-alt"></i>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
+        <i class="fas fa-th-large"></i>
+      </a>
+    </li> --}}
+    <div class="col-sm-5  ml-5">
+      <div class="user-area dropdown float-right">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <img class="user-avatar rounded-circle" src="/images/profile/profile.png"
+            onerror="this.onerror=null; this.src='/images/avatar/anonimus.png'" alt="User Avatar" id="perfil"
+            width="35">
+        </a>
+
+        <div class="user-menu dropdown-menu">
+
+          <a class="nav-link" href="/profile"><i class="fa fa-user"></i> Perfil</a>
+
+          <a class="nav-link" href="/config"><i class="fa fa-cog"></i> Configurações</a>
+
+          <a class="nav-link" href="/account/logout"><i class="fa fa-power-off"></i> Sair</a>
+
+        </div>
+      </div>
+
+
+
+    </div>
+  </ul>
+</nav>
+<!-- /.navbar -->
+<script>
+  let DATE = document.querySelector('#Date')
+  let HOURS = document.querySelector('#horas')
+
+  function dataTime() {
+    const formataHora = (Hora) => Hora < 10 ? '0' + Hora : Hora
+
+    let DT = new Date();
+    hr = DT.getHours()
+    min = DT.getMinutes()
+    dia = DT.getDate().toString(),
+    diaF = (dia.length == 1) ? '0' + dia : dia
+    mes = (DT.getMonth() + 1).toString()
+    mesF = (mes.length == 1) ? '0' + mes : mes
+    ano = DT.getUTCFullYear()
+
+    DATE.innerHTML = ` ${diaF}/${mesF}/${ano}.`
+    HOURS.innerHTML = ` ${formataHora(hr)}:${formataHora(min)}`
+  }
+
+  dataTime()
+
+  setInterval(() => {
+    dataTime()
+  }, 10000)
+
+</script>

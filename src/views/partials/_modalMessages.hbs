@@ -1,0 +1,166 @@
+<div class="modal" tabindex="-1" id="Welcome">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Mensagem de boas vindas.</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="/config/messages" method="post">
+                <div class="modal-body">
+                    <div class="row">
+                        <label for="">Programe sua mensagem</label>
+                        <textarea name="welcome" id="welcome" cols="30" rows="5"
+                            class="form-control">{{messages.welcome}}</textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <button type="submit" class="btn btn-primary">Salvar alterações</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal" tabindex="-1" id="endMessage">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Mensagem final</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="/config/messages" method="post">
+                <div class="modal-body">
+                    <div class="row">
+                        <label for="endMsg">Programe sua mensagem</label>
+                        {{#if messages.endMsg}}
+                        <textarea name="endMsg" id="endMsg" cols="30" rows="5"
+                            class="form-control">{{messages.endMsg}}</textarea>
+                        {{else}}
+                        <textarea name="endMsg" id="endMsg" cols="30" rows="5" class="form-control"></textarea>
+                        {{/if}}
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <button type="submit" class="btn btn-primary">Salvar alterações</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal" tabindex="-1" id="preparation">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Mensagem no status em preparo</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="/config/messages" method="post">
+                <div class="modal-body">
+                    <div class="row">
+                        <label for="preparation">Programe sua mensagem</label>
+                        {{#if messages.preparation}}
+                        <textarea name="preparation" id="preparation" cols="30" rows="5"
+                            class="form-control">{{messages.preparation}}</textarea>
+                        {{else}}
+                        <textarea name="preparation" id="preparation" cols="30" rows="5"
+                            class="form-control"></textarea>
+                        {{/if}}
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <button type="submit" class="btn btn-primary">Salvar alterações</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal" tabindex="-1" id="delivering">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Mensagem saiu para entrega</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="/config/messages" method="post">
+                <div class="modal-body">
+                    <div class="row">
+                        <label for="delivering">Programe sua mensagem</label>
+                        {{#if messages.delivering}}
+                        <textarea name="delivering" id="delivering" cols="30" rows="5"
+                            class="form-control">{{messages.delivering}}</textarea>
+                        {{else}}
+                        <textarea name="delivering" id="delivering" cols="30" rows="5" class="form-control"></textarea>
+                        {{/if}}
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <button type="submit" class="btn btn-primary">Salvar alterações</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal" tabindex="-1" id="delivered">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Mensagem de Entregue</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="/config/messages" method="post">
+                <div class="modal-body">
+                    <div class="row">
+                        <label for="delivered">Programe sua mensagem</label>
+                        {{#if messages.delivered}}
+                        <textarea name="delivered" id="delivered" cols="30" rows="5"
+                            class="form-control">{{messages.delivered}}</textarea>
+                        {{else}}
+                        <textarea name="delivered" id="delivered" cols="30" rows="5" class="form-control"></textarea>
+                        {{/if}}
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <button type="submit" class="btn btn-primary">Salvar alterações</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal" tabindex="-1" id="cancel">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Mensagem de pedido cancelado</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="/config/messages" method="post">
+                <div class="modal-body">
+                    <div class="row">
+                        <label for="calceled_msg">Programe sua mensagem</label>
+                        {{#if messages.canceled_msg}}
+                        <textarea name="canceled_msg" id="calceled_msg" cols="30" rows="5"
+                            class="form-control">{{messages.canceled_msg}}</textarea>
+                        {{else}}
+                        <textarea name="canceled_msg" id="calceled_msg" cols="30" rows="5"
+                            class="form-control"></textarea>
+                        {{/if}}
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <button type="submit" class="btn btn-primary">Salvar alterações</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

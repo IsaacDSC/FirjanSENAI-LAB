@@ -1,0 +1,49 @@
+<div class="modal" tabindex="-1" id="finaly">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Finalizar Pedido</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-3"></div>
+                        <div class="col-3 ml-1">
+                            <label for="" class="text-center">Entrega
+                                <input type="radio" value="Entrega" name="classEntrega" checked class="form-control">
+                            </label>
+                        </div>
+                        <div class="col-3 ml-1">
+                            <label for="" class="text-center">Local
+                                <input type="radio" value="Local" name="classEntrega" class="form-control">
+                            </label>
+                        </div>
+                        <div class="col-3"></div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col"></div>
+                        <div class="col-8">
+                            <select name="" id="sTipoDePagamento" class="form-control">
+                                <option value="">Tipo pagamento</option>
+                                <option value="Dinheiro">Dinheiro</option>
+                                <option value="Cartão">Cartão</option>
+                            </select>
+                            <div class="input-group mt-3">
+                                <span class="input-group-text">R$</span>
+                                <input type="text" id="trocoPara" class="form-control"
+                                    aria-label="Dollar amount (with dot and two decimal places)"
+                                    placeholder="Troco para">
+                            </div>
+                        </div>
+                        <div class="col"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="salvarPedido">Salvar Pedido</button>
+            </div>
+        </div>
+    </div>
+</div>

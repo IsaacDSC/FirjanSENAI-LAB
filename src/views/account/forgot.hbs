@@ -1,0 +1,50 @@
+<div class="login-box">
+  <div class="login-logo" style="width: 5%;">
+    <a href="http://solutionstech.com.br/"><b></b>
+      <img src="/images/logo.png" alt="" width="360">
+    </a>
+  </div>
+  <!-- /.login-logo -->
+  <div class="card">
+    <div class="card-body login-card-body">
+      <p class="login-box-msg">Acesso sem de senha.</p>
+      <p class="text-center"><small>Copie o token e insira seus dados como username e nome e depois acesse com username
+          e token.</small></p>
+          {{>_msg}}
+      <div class="row">
+        <div class="col-10">
+          <input type="text" id="TOKEN" class="form-control mt-2" value="{{token}}">
+        </div>
+        <div class="col-2">
+          <button id="btnCopy" class="btn btn-primary mt-2 col-12">
+            <i class="far fa-copy"></i>
+          </button>
+        </div>
+      </div>
+      <hr>
+      <form action="/account/forgot" method="post">
+        <div class="row mt-2">
+          <div class="col">
+            <input type="text" name="username" class="form-control" placeholder="Digite seu username">
+            <input type="text" name="name" class="form-control mt-2" placeholder="Digite seu nome de usuário">
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col"></div>
+          <div class="col-8">
+            <button class="btn btn-primary col-12">Enviar</button>
+          </div>
+          <div class="col"></div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+  const btn = document.querySelector('#btnCopy')
+  btn.addEventListener('click', (() => {
+    document.querySelector('#TOKEN').select()
+    document.execCommand('copy')
+  }))
+</script>

@@ -1,0 +1,48 @@
+<div class="container col-12" id="ProfileIMG">
+    <div class="modal" tabindex="-1" id="imgProfile">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Carrege sua Imagem de Perfil</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="row ml-5">
+                                <div class="form-group ml-0">
+                                    <img src="/images/profile/profile.png" onerror="this.onerror=null; this.src='/images/avatar/anonimus.png'" alt="Fotom Perfil" class="ml-5"
+                                        style="border-radius:50%;" width="250">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <form action="/profile/upload" enctype="multipart/form-data" method="post">
+                        <div class="row ml-2">
+                            <div class="form-group col-8 ml-5">
+                                <p class="text-center ml-4">Administrador</p>
+                                <div class="input-group mb-3 ml-4">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                                    </div>
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="inputGroupFile01"
+                                            aria-describedby="inputGroupFileAddon01" name="img">
+                                        <label class="custom-file-label" for="inputGroupFile01">Carregar Imagem</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <div class="row ml-5">
+                        <div class="form-group col-12 ml-2">
+                            <button  class="btn btn-primary col-10" id="EnviarImg">Enviar Imagem</button>
+                        </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
