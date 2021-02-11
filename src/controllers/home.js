@@ -1,6 +1,6 @@
 class home{
     index(req, res){
-        res.send('ok')
+        res.render('dashboard/home')
     }
 }
 
