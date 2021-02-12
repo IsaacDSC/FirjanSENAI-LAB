@@ -3,7 +3,7 @@ const LocalStrategy = require('passport-local').Strategy
 const bcrypt = require('bcrypt')
 const { dataUser } = require('../../data/user')
     //models
-const Admin = require('../database/models/Admin')
+const Admin = require('../database/models/admin')
 
 module.exports = function(passport) {
     passport.use(new LocalStrategy({

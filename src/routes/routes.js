@@ -1,6 +1,8 @@
 const express = require('express')
 const router = express.Router()
 
+const { auth } = require('../middlewares/auth')
+
 const home = require('../controllers/home')
 const SENAILAB = require('../controllers/senaiLab')
 const account = require('../controllers/account')
@@ -13,8 +15,8 @@ router.get('/SENAILAB', SENAILAB.index)
 router.get('/SENAILAB/schedule', SENAILAB.schedule)
 
 //ACCOUNT LOGIN ACESS APLICATION
-router.get('/account/login', account.login)
-router.get('/account/login', account.verifyCredencials)
+router.get('/account/login', account.index)
+router.post('/account/login', account.login)
 router.get('/account/logout', account.logout)
 
 //DASHBOARD PROFILES 

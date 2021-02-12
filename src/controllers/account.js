@@ -1,7 +1,7 @@
 //MODULES
 const passport = require('passport')
     //FUNCTION OR CONST
-const Admin = require('../database/models/Admin')
+const Admin = require('../database/models/admin')
 const bcrypt = require('bcrypt')
 
 class Account {
@@ -10,7 +10,6 @@ class Account {
     }
 
     login(req, res, next) {
-
         passport.authenticate('local', {
             successRedirect: '/',
             failureRedirect: '/account/login',

@@ -22,26 +22,12 @@ class App {
         this.engine()
         this.config()
     }
-    config() {
-        if (CONFIG.active == true) dbRun()
-        if(CONFIG.active == true && CONFIG.createAdmin == true)SUPERUSER() 
-    }
-
     midlewares() {
         //this.express.use(bodyParser.urlencoded({ extended: true }))
         //this.express.use(bodyParser.json())
         this.express.use(express.json())
         this.express.use(cors())
     }
-
-    routes() {
-        this.express.use(router)
-    }
-
-    static() {
-        this.express.use(express.static(path.join(__dirname, '../', 'public')))
-    }
-
     session() {
         this.express.use(session({
             secret: 'secret',
@@ -49,12 +35,6 @@ class App {
             saveUninitialized: true
         }))
     }
-
-    passport() {
-        this.express.use(passport.initialize())
-        this.express.use(passport.session())
-    }
-
     flash() {
         //config Flahs
         this.express.use(flash())
@@ -68,10 +48,29 @@ class App {
         })
 
     }
+
+    passport() {
+        this.express.use(passport.initialize())
+        this.express.use(passport.session())
+    }
+
+    routes() {
+        this.express.use(router)
+    }
+
+    static() {
+        this.express.use(express.static(path.join(__dirname, '../', 'public')))
+    }
+
     engine() {
         this.express.engine('hbs', hbs({ extname: 'hbs', defaultLayout: 'main' }));
         this.express.set('view engine', 'hbs');
         this.express.set("views", path.join(__dirname, '../', "/views/"))
+    }
+
+    config() {
+        if (CONFIG.active == true) dbRun()
+        if(CONFIG.active == true && CONFIG.createAdmin == true)SUPERUSER() 
     }
 }
 
