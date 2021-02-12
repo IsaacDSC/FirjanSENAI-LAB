@@ -6,7 +6,8 @@ const flash = require('express-flash')
 const cors = require('cors')
 
 const router = require('../routes/routes')
-
+const { CONFIG } = require('../settings/settings')
+const { dbRun, SUPERUSER } = require('../database/createTables')
 
 class App {
     constructor() {
@@ -17,6 +18,11 @@ class App {
         this.session()
         this.flash()
         this.engine()
+        this.config()
+    }
+    config() {
+        if (CONFIG.active == true) dbRun()
+        if(CONFIG.active == true && CONFIG.createAdmin == true)SUPERUSER() 
     }
 
     midlewares() {

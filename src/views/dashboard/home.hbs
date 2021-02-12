@@ -138,149 +138,8 @@
                     <div class="card-body">
                         <div class="container">
                             <div class="row">
-                                <div class="col-sm-12 col-lg-4">
-                                    <div class="card text-white bg-info mb-3">
-                                        <h5 class="text-center mt-3">Pedidos</h5>
-                                        <hr>
-                                        <div class="row">
-                                            <table class="table">
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="col">#</th>
-                                                        <th scope="col">Pedido</th>
-                                                        <th scope="col">Cliente</th>
-                                                        <th scope="col">Próximo</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    {{#each ORDER}}
-                                                    <tr>
-                                                        <th scope="row">1</th>
-                                                        <td>
-                                                            <button type="button"
-                                                                onclick="modalDadosdoPedido('{{this.order}}')"
-                                                                class="btn" data-toggle="modal"
-                                                                data-target="#maisPedido{{this.order}}">
-                                                                {{this.order}}
-                                                            </button>
-                                                        </td>
-                                                        <td>
-                                                            <button type="button" class="btn" data-toggle="modal"
-                                                                data-target="#modalPedido{{this.order}}">
-                                                                {{this.name}}
-                                                            </button>
-                                                        </td>
-                                                        <td>
-                                                            <form action="/cashier/next/stage" method="post">
-                                                                <button class="btn btn-info">
-                                                                    <input type="hidden" name="stage" id="stage"
-                                                                        value="1">
-                                                                    <input type="hidden" name="order" id="order"
-                                                                        value="{{this.order}}">
-                                                                    <i class="fas fa-chevron-right"></i>
-                                                                </button>
-                                                            </form>
-                                                        </td>
-                                                    </tr>
-                                                    {{/each}}
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-12 col-lg-4">
-                                    <div class="card text-white bg-primary mb-3">
-                                        <h5 class="text-center mt-3">Em Preparo</h5>
-                                        <hr>
-                                        <div class="row">
-                                            <table class="table">
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="col">#</th>
-                                                        <th scope="col">Pedido</th>
-                                                        <th scope="col">Cliente</th>
-                                                        <th scope="col">Próximo</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    {{#each PREPARATIONS}}
-                                                    <tr>
-                                                        <th scope="row">1</th>
-                                                        <td>
-                                                            <button type="button" class="btn" data-toggle="modal"
-                                                                data-target="#maisPedido">
-                                                                {{this.order}}
-                                                            </button>
-                                                        </td>
-                                                        <td>
-                                                            <button type="button" class="btn" data-toggle="modal"
-                                                                data-target="#maisPedido">
-                                                                {{this.name}}
-                                                            </button>
-                                                        </td>
-                                                        <td>
-                                                            <form action="/cashier/next/stage" method="post">
-                                                                <input type="hidden" name="stage" id="stage" value="2">
-                                                                <input type="hidden" name="order" id="order"
-                                                                    value="{{this.order}}">
-                                                                <button class="btn btn-primary">
-                                                                    <i class="fas fa-chevron-right"></i>
-                                                                </button>
-                                                            </form>
-                                                        </td>
-                                                    </tr>
-                                                    {{/each}}
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-12 col-lg-4">
-                                    <div class="card text-white bg-success mb-3">
-                                        <h5 class="text-center mt-3">Saiu para Entrega</h5>
-                                        <hr>
-                                        <div class="row">
-                                            <table class="table">
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="col">#</th>
-                                                        <th scope="col">Pedido</th>
-                                                        <th scope="col">Cliente</th>
-                                                        <th scope="col">Próximo</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    {{#each DELIVERING}}
-                                                    <tr>
-                                                        <th scope="row">1</th>
-                                                        <td>
-                                                            <button type="button" class="btn" data-toggle="modal"
-                                                                data-target="#maisPedido">
-                                                                {{this.order}}
-                                                            </button>
-                                                        </td>
-                                                        <td>
-                                                            <button type="button" class="btn" data-toggle="modal"
-                                                                data-target="#maisPedido">
-                                                                {{this.name}}
-                                                            </button>
-                                                        </td>
-                                                        <td>
-                                                            <form action="/cashier/next/stage" method="post">
-                                                                <input type="hidden" name="stage" id="stage" value="3">
-                                                                <input type="hidden" name="order" id="order"
-                                                                    value="{{this.order}}">
-                                                                <button class="btn btn-success">
-                                                                    <i class="fas fa-chevron-right"></i>
-                                                                </button>
-                                                            </form>
-                                                        </td>
-                                                    </tr>
-                                                    {{/each}}
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
+
+
                             </div>
                         </div>
                     </div>
@@ -289,86 +148,7 @@
 
                     <div class="card-footer mt-4">
                         <div class="row">
-                            <div class="col-sm-3 col-6">
-                                <div class="description-block border-right">
-                                    <span class="description-percentage text-success"><i class="fas fa-caret-up"></i>
-                                        {{totalDatas.totalPreparation}}</span>
-                                    <div class="row mt-2">
-                                        <div class="col"></div>
-                                        <div class="col-10">
-
-                                        </div>
-                                        <div class="col"></div>
-                                    </div>
-                                    Montando Pedido
-                                </div>
-                                <!-- /.description-block -->
-                            </div>
-                            <!-- /.col -->
-                            <div class="col-sm-3 col-6">
-                                <div class="description-block border-right">
-                                    <span class="description-percentage text-warning"><i class="fas fa-caret-right"></i>
-                                        {{totalDatas.totalDelivering}}</span>
-                                    <div class="row mt-2">
-                                        <div class="col"></div>
-                                        <div class="col-10">
-
-                                        </div>
-                                        <div class="col"></div>
-                                    </div>
-                                    Saiu para Entrega
-                                </div>
-                                <!-- /.description-block -->
-                            </div>
-                            <!-- /.col -->
-                            <div class="col-sm-3 col-6">
-                                <div class="description-block border-right">
-                                    <span class="description-percentage text-success"><i class="fas fa-caret-up"></i>
-                                        {{totalDatas.totalSales}}</span>
-                                    <div class="row mt-2">
-                                        <div class="col"></div>
-                                        <div class="col-10">
-
-                                        </div>
-                                        <div class="col"></div>
-                                    </div>
-                                    Entregue
-                                </div>
-                                <!-- /.description-block -->
-                            </div>
-                            <!-- /.col -->
-                            <div class="col-sm-3 col-6">
-                                <div class="description-block">
-                                    <span class="description-percentage text-danger"><i class="fas fa-caret-down"></i>
-                                        {{totalDatas.totalCanceled}}</span>
-                                    <div class="row mt-2">
-                                        <div class="col"></div>
-                                        <div class="col-10">
-
-                                        </div>
-                                        <div class="col"></div>
-                                    </div>
-                                    Produto Cancelado
-                                </div>
-                                <!-- /.description-block -->
-                            </div>
-                        </div>
-                        <!-- /.row -->
-                    </div>
-                    <div class="card-footer clearfix">
-                        <hr>
-                        <div class="row">
-                            <div class="col">
-                                <a href="javascript:void(0)" class="btn btn-sm btn-secondary float-left">Anterior</a>
-
-                            </div>
-                            <div class="col">
-                                <a href="/cashier/seach/orders/monthly" class="btn btn-outline-info col-12">Ver as entregas deste mês</a>
-                            </div>
-                            <div class="col">
-
-                                <a href="javascript:void(0)" class="btn btn-sm btn-secondary float-right">Proximo</a>
-
+                            
                             </div>
                         </div>
                     </div>
@@ -379,8 +159,8 @@
             <!-- /.col -->
         </div>
         <!-- /.row -->
-        {{>_cashier}}
-
+        {{!-- {{>_cashier}}
+ --}}
 
         {{#if SUPERUSER}}
         <div class="row">
@@ -441,57 +221,57 @@
 
                 <!-- PRODUCT LIST -->
                 {{!-- <div class="card">
-            <div class="card-header">
-              <h3 class="card-title">Recently Added Products</h3>
+                    <div class="card-header">
+                        <h3 class="card-title">Recently Added Products</h3>
 
-              <div class="card-tools">
-                <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                  <i class="fas fa-minus"></i>
-                </button>
-                <button type="button" class="btn btn-tool" data-card-widget="remove">
-                  <i class="fas fa-times"></i>
-                </button>
-              </div>
-            </div>
-            <!-- /.card-header -->
-            <div class="card-body p-0">
-              <ul class="products-list product-list-in-card pl-2 pr-2">
-                <!-- /.item -->
-                <li class="item">
-                  <div class="product-img">
-                    <img src="dist/img/default-150x150.png" alt="Product Image" class="img-size-50">
-                  </div>
-                  <div class="product-info">
-                    <a href="javascript:void(0)" class="product-title">Bicycle
-                      <span class="badge badge-info float-right">$700</span></a>
-                    <span class="product-description">
-                      26" Mongoose Dolomite Men's 7-speed, Navy Blue.
-                    </span>
-                  </div>
-                </li>
-                <!-- /.item -->
-                <!-- /.item -->
-                <li class="item">
-                  <div class="product-img">
-                    <img src="dist/img/default-150x150.png" alt="Product Image" class="img-size-50">
-                  </div>
-                  <div class="product-info">
-                    <a href="javascript:void(0)" class="product-title">PlayStation 4
-                      <span class="badge badge-success float-right">$399</span></a>
-                    <span class="product-description">
-                      PlayStation 4 500GB Console (PS4)
-                    </span>
-                  </div>
-                </li>
-                <!-- /.item -->
-              </ul>
-            </div>
-            <!-- /.card-body -->
-            <div class="card-footer text-center">
-              <a href="javascript:void(0)" class="uppercase">View All Products</a>
-            </div>
-            <!-- /.card-footer -->
-          </div> --}}
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-tool" data-card-widget="remove">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body p-0">
+                        <ul class="products-list product-list-in-card pl-2 pr-2">
+                            <!-- /.item -->
+                            <li class="item">
+                                <div class="product-img">
+                                    <img src="dist/img/default-150x150.png" alt="Product Image" class="img-size-50">
+                                </div>
+                                <div class="product-info">
+                                    <a href="javascript:void(0)" class="product-title">Bicycle
+                                        <span class="badge badge-info float-right">$700</span></a>
+                                    <span class="product-description">
+                                        26" Mongoose Dolomite Men's 7-speed, Navy Blue.
+                                    </span>
+                                </div>
+                            </li>
+                            <!-- /.item -->
+                            <!-- /.item -->
+                            <li class="item">
+                                <div class="product-img">
+                                    <img src="dist/img/default-150x150.png" alt="Product Image" class="img-size-50">
+                                </div>
+                                <div class="product-info">
+                                    <a href="javascript:void(0)" class="product-title">PlayStation 4
+                                        <span class="badge badge-success float-right">$399</span></a>
+                                    <span class="product-description">
+                                        PlayStation 4 500GB Console (PS4)
+                                    </span>
+                                </div>
+                            </li>
+                            <!-- /.item -->
+                        </ul>
+                    </div>
+                    <!-- /.card-body -->
+                    <div class="card-footer text-center">
+                        <a href="javascript:void(0)" class="uppercase">View All Products</a>
+                    </div>
+                    <!-- /.card-footer -->
+                </div> --}}
                 <!-- /.card -->
 
 
