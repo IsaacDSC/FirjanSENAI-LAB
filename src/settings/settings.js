@@ -1,8 +1,8 @@
 const CONFIG = {
     active: false,
     createDB:false,
-    createTable: false,
-    createAdmin: true
+    createTable: true,
+    createAdmin: false
 }
 
 

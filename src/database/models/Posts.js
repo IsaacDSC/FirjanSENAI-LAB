@@ -1,6 +1,6 @@
 const db = require('../conn/sequelize')
 
-const Schedule = db.define('posts', {
+const Post = db.define('posts', {
     title: {
         type: db.Sequelize.STRING,
         allowNull: false
@@ -20,4 +20,4 @@ const Schedule = db.define('posts', {
    
 })
 
-module.exports = { Schedule }
+module.exports =  Post

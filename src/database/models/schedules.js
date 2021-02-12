@@ -27,4 +27,4 @@ const Schedule = db.define('schedules', {
     }
 })
 
-module.exports = { Schedule }
+module.exports = Schedule 

@@ -4,7 +4,9 @@ const path = require('path')
 const session = require('express-session')
 const flash = require('express-flash')
 const cors = require('cors')
+const passport = require('passport')
 
+require('../middlewares/passport')(passport)
 const router = require('../routes/routes')
 const { CONFIG } = require('../settings/settings')
 const { dbRun, SUPERUSER } = require('../database/createTables')
@@ -13,10 +15,10 @@ class App {
     constructor() {
         this.express = express()
         this.midlewares()
-        this.routes()
-        this.static()
         this.session()
         this.flash()
+        this.routes()
+        this.static()
         this.engine()
         this.config()
     }

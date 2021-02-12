@@ -6,7 +6,8 @@ const Posts = require('./models/Posts')
 
 const db = require('./conn/query')
 const { CONFIG } = require('../settings/settings')
-const TABLES = [Admin, Schedule, Posts ]
+//const TABLES = [Admin, Schedule, Posts ]
+const TABLES = [Schedule, Posts]
 
 
 const dbRun = () => {
