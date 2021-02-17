@@ -7,7 +7,7 @@ const connection = mysql.createConnection({
         database: 'senai',
         user: 'root',
         password: 'root', */
-    host: 'localhost',
+    host: 'db4free.net',
     port: '3306',
     database: 'senai_lab2',
     user: 'senai_lab2',

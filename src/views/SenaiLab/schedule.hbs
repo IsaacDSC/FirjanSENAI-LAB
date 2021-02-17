@@ -7,42 +7,46 @@
         <div class="card-body">
             <h5>Agende agora suas tarefas no nosso SENAI LAB 2!</h5>
             <hr>
-            <div class="row">
-                <div class="col">
-                    <label for="">Turma</label>
-                    <input type="text" name="" id="" class="form-control">
-                     <label for="">Atividade</label>
-                    <input type="text" name="" id="" class="form-control">
-                </div>
-                <div class="col">
-                    <label for="">Material necessário</label>
-                    <input type="text" name="" id="" class="form-control">
-                    <label for="">Turma</label>
-                    <input type="text" name="" id="" class="form-control">
-                </div>
-                <div class="col">
-                    <label for="">Data</label>
-                    <input type="date" name="" id="" class="form-control">
-                    <div class="row">
-                        <div class="col-6">
-                            <label for="">Horário inicio</label>
-                            <input type="number" name="" id="" class="form-control" placeholder="Digite seu Horário">
-                        </div>
-                        <div class="col-6">
-                            <label for="">Horário fim</label>
-                            <input type="number" name="" id="" class="form-control" placeholder="Digite seu Horário">
+            <form action="" method="post">
+                <div class="row">
+                    <div class="col">
+                        <label for="turma">Turma</label>
+                        <input type="text" name="turma" id="turma" class="form-control">
+                        <label for="atividade">Atividade</label>
+                        <input type="text" name="atividade" id="atividade" class="form-control">
+                    </div>
+                    <div class="col">
+                        <label for="material">Material necessário</label>
+                        <input type="text" name="material" id="material" class="form-control">
+                        <label for="">Turma</label>
+                        <input type="text" name="" id="" class="form-control">
+                    </div>
+                    <div class="col">
+                        <label for="data">Data</label>
+                        <input type="date" name="data" id="data" class="form-control">
+                        <div class="row">
+                            <div class="col-6">
+                                <label for="hrInicio">Horário inicio</label>
+                                <input type="number" name="hrInicio" id="hrInicio" class="form-control"
+                                    placeholder="Digite seu Horário">
+                            </div>
+                            <div class="col-6">
+                                <label for="hrFim">Horário fim</label>
+                                <input type="number" name="hrFim" id="hrFim" class="form-control"
+                                    placeholder="Digite seu Horário">
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <hr>
-            <div class="row mt-4">
-                <div class="col"></div>
-                <div class="col">
-                    <button class="btn btn-info col-12">Agendar</button>
+                <hr>
+                <div class="row mt-4">
+                    <div class="col"></div>
+                    <div class="col">
+                        <button class="btn btn-info col-12">Agendar</button>
+                    </div>
+                    <div class="col"></div>
                 </div>
-                <div class="col"></div>
-            </div>
+            </form>
         </div>
     </div>
 </div>

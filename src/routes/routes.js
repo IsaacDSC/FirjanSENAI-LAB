@@ -13,6 +13,7 @@ router.get('/system', home.index)
 //INITIAL SENAI LAB II
 router.get('/SENAILAB', SENAILAB.index)
 router.get('/SENAILAB/schedule', SENAILAB.schedule)
+router.post('/SENAILAB/schedule', SENAILAB.register)
 
 //ACCOUNT LOGIN ACESS APLICATION
 router.get('/account/login', account.index)

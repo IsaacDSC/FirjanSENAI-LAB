@@ -6,7 +6,7 @@ class SenaiLab {
         res.render('SenaiLab/schedule', { layout: 'senaiLab.hbs' })
     }
     register(req, res){
-        
+        console.log(req.body)
     }
     profile(req, res){
         res.render('profile/profile')

@@ -10,7 +10,7 @@ const connection = new Sequelize({
         timestamps: true
     } */
 
-    host: 'localhost',
+    host: 'db4free.net',
     port: '3306',
     database: 'senai_lab2',
     username: 'senai_lab2',
