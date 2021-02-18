@@ -5,34 +5,34 @@
 <div class="container">
     <div class="card">
         <div class="card-body">
-            <h5>Agende agora suas tarefas no nosso SENAI LAB 2!</h5>
+            <h5>Agende agora suas tarefas no nosso SENAI LAB II!</h5>
             <hr>
-            <form action="" method="post">
+            <form action="/SENAILAB/schedule" method="post">
                 <div class="row">
                     <div class="col">
                         <label for="turma">Turma</label>
-                        <input type="text" name="turma" id="turma" class="form-control">
+                        <input type="text" name="turma" id="turma" class="form-control" required>
                         <label for="atividade">Atividade</label>
-                        <input type="text" name="atividade" id="atividade" class="form-control">
+                        <input type="text" name="atividade" id="atividade" class="form-control" required>
                     </div>
                     <div class="col">
                         <label for="material">Material necessário</label>
-                        <input type="text" name="material" id="material" class="form-control">
+                        <input type="text" name="material" id="material" class="form-control" required>
                         <label for="">Turma</label>
-                        <input type="text" name="" id="" class="form-control">
+                        <input type="text" name="" id="" class="form-control" >
                     </div>
                     <div class="col">
-                        <label for="data">Data</label>
-                        <input type="date" name="data" id="data" class="form-control">
+                        <label for="date">Data</label>
+                        <input type="date" name="date" id="date" class="form-control" required>
                         <div class="row">
                             <div class="col-6">
                                 <label for="hrInicio">Horário inicio</label>
-                                <input type="number" name="hrInicio" id="hrInicio" class="form-control"
+                                <input type="time" name="hrInicio" id="hrInicio" class="form-control" required
                                     placeholder="Digite seu Horário">
                             </div>
                             <div class="col-6">
                                 <label for="hrFim">Horário fim</label>
-                                <input type="number" name="hrFim" id="hrFim" class="form-control"
+                                <input type="time" name="hrFim" id="hrFim" class="form-control" required
                                     placeholder="Digite seu Horário">
                             </div>
                         </div>

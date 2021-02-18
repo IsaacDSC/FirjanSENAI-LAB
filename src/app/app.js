@@ -5,6 +5,7 @@ const session = require('express-session')
 const flash = require('express-flash')
 const cors = require('cors')
 const passport = require('passport')
+const bodyParser = require('body-parser')
 
 require('../middlewares/passport')(passport)
 const router = require('../routes/routes')
@@ -17,14 +18,15 @@ class App {
         this.midlewares()
         this.session()
         this.flash()
+        this.passport()
         this.routes()
         this.static()
         this.engine()
         this.config()
     }
     midlewares() {
-        //this.express.use(bodyParser.urlencoded({ extended: true }))
-        //this.express.use(bodyParser.json())
+        this.express.use(bodyParser.urlencoded({ extended: true }))
+        this.express.use(bodyParser.json())
         this.express.use(express.json())
         this.express.use(cors())
     }

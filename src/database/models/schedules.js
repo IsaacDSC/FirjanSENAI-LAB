@@ -1,6 +1,10 @@
 const db = require('../conn/sequelize')
 
 const Schedule = db.define('schedules', {
+    collaborator: {
+        //key mull to admin
+        type: db.Sequelize.STRING,
+    },
     turma: {
         type: db.Sequelize.STRING,
         allowNull: false
@@ -21,9 +25,14 @@ const Schedule = db.define('schedules', {
         type: db.Sequelize.STRING,
         allowNull: false
     },
-    dateInit: {
+    dateFim: {
         type: db.Sequelize.STRING,
         allowNull: false
+    },
+    status:{
+        type: db.Sequelize.STRING,
+        allowNull: false,
+        defaultValue: 'AGENDADO'
     }
 })
 

@@ -12,35 +12,6 @@
         {{>_msg}}
     </div>
 </div>
-<div class="container">
-    <div class="card">
-        <div class="card-body">
-            <div class="container">
-            </div>
-            <h5 class="text-center">Configure as Mensagens</h5>
-            <div class="row mt-3">
-                <div class="col"></div>
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 col-xxl-2 mt-1 ">
-                    <button type="button" class="btn btn-primary col-sm-12" data-bs-toggle="modal"
-                        data-bs-target="#Welcome">Boas Vindas</button>
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 col-xxl-2 mt-1 "><button type="button"
-                        class="btn btn-primary col-sm-12" data-bs-toggle="modal" data-bs-target="#preparation">Em
-                        preparo</button></div>
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 col-xxl-2 mt-1 ">
-                    <button type="button" class="btn btn-primary col-sm-12" data-bs-toggle="modal"
-                        data-bs-target="#delivering">Saiu para entrega</button>
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 col-xxl-2 mt-1 ">
-                    <button type="button" class="btn btn-primary col-sm-12" data-bs-toggle="modal"
-                        data-bs-target="#delivered">Entregue</button>
-                </div>
-                <div class="col"></div>
-            </div>
-        </div>
-    </div>
-</div>
-{{>_modalMessages}}
 
 
 <div class="container" id="config">
@@ -55,25 +26,7 @@
                             <div class="form-group ">
                                 <h6 class="text-left">Ativar Mensagens<small><br>(Caso ative você deverá cadastrar as
                                         mensagens)</small></h6>
-                                <div class="col-sm-12">
-                                    <div class="page-header float-left">
-                                        <div class="page-title">
-                                            <ol class="breadcrumb text-right">
-                                                <p>Desativar/Ativar &nbsp;&nbsp;</p>
-                                                <label class="switch">
-                                                    {{#if (valorTrue this.neighborhood)}}
-                                                    <input type="checkbox" id="configBairro" checked data-toggle="modal"
-                                                        style="color: black;">
-                                                    {{else}}
-                                                    <input type="checkbox" id="configBairro" data-toggle="modal"
-                                                        style="color: black;">
-                                                    {{/if}}
-                                                    <span class="slider round"></span>
-                                                </label>
-                                            </ol>
-                                        </div>
-                                    </div>
-                                </div>
+                                
                             </div>
                         </div>
                         <div class="col-sm-12 col-md-12 col">
@@ -83,21 +36,6 @@
                                         )</small></h6>
                                 <div class="col-sm-12">
                                     <div class="page-header float-left">
-                                        <div class="page-title">
-                                            <ol class="breadcrumb text-right">
-                                                <p>Desativar/Ativar &nbsp;&nbsp;</p>
-                                                <label class="switch">
-                                                    {{#if (valorTrue this.description)}}
-                                                    <input type="checkbox" id="descricaoProduto" checked
-                                                        data-toggle="modal" style="color: black;">
-                                                    {{else}}
-                                                    <input type="checkbox" id="descricaoProduto" data-toggle="modal"
-                                                        style="color: black;">
-                                                    {{/if}}
-                                                    <span class="slider round"></span>
-                                                </label>
-                                            </ol>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -126,9 +64,9 @@
                     <hr>
                 </div>
                 <div class="col-lg-6 col-sm-12">
-                    <h4 class="text-left"> Registrar Funcionários</h4>
+                    <h4 class="text-left"> Registrar Colaborador</h4>
                     <hr>
-                    <form action="/config/employee/register" method="post">
+                    <form action="/config/collaborators/register" method="post">
                         <div class="row">
                             <div class="col">
                                 <label for="">Username</label>
@@ -175,13 +113,13 @@
         <div class="card-body">
             <div class="row mt-3">
                 <div class="col">
-                    <h4>Dar baixa em funcionário</h4>
+                    <h4>Remover Colaborador</h4>
                     <hr>
                     <div class="row">
                         <div class="col"></div>
                         <div class="col-8">
                             <button type="button" class="btn btn-outline-danger col-12" data-bs-toggle="modal"
-                        data-bs-target="#DeleteEmployeed">Retirar do sistema</button>
+                                data-bs-target="#DeleteEmployeed">Retirar do sistema</button>
                         </div>
                         <div class="col"></div>
                     </div>
@@ -189,20 +127,6 @@
             </div>
         </div>
     </div>
-</div>
-<div class="container">
-    <div class="card">
-        <div class="card-body">
-            <div class="row">
-                <div class="col"></div>
-                <div class="col">
-                    {{>_mercadoPago}}
-                </div>
-                <div class="col"></div>
-            </div>
-        </div>
-    </div>
-</div>
 </div>
 
 
