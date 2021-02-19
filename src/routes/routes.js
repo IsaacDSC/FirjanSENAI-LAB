@@ -8,6 +8,13 @@ const SENAILAB = require('../controllers/senaiLab')
 const account = require('../controllers/account')
 const profile = require('../controllers/profile')
 const config = require('../controllers/config')
+const turmas = require('../controllers/turmas')
+
+//REGISTER TURMAS
+router.get('/turmas/register', turmas.index)
+router.post('/turmas/register/curso', turmas.registerCursos)
+router.post('/turmas/register/turma', turmas.registerTurmas)
+router.post('/turmas/register/disciplina', turmas.registerDisciplina)
 
 //DASHBOARD ADMINISTRATIVO
 router.get('/', home.redirect)
@@ -31,6 +38,7 @@ router.get('/profile', auth, profile.index)
 //CONFIG
 router.get('/config',auth, config.index )
 router.post('/config/collaborators/register', auth, config.registerCollaborators)
+router.post('/config/collaborators/delete', auth, config.deleteCollaborators)
 
 
 module.exports = router

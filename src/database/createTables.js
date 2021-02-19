@@ -3,11 +3,15 @@ const bcrypt = require('bcrypt')
 const Admin = require('./models/admin')
 const Schedule = require('./models/schedules')
 const Posts = require('./models/Posts')
+const Cursos = require('./models/cursos')
+const Disciplinas = require('./models/Disciplinas')
+const Turmas = require('./models/Turmas')
+const Docentes = require('./models/DocenteDisciplina')
 
 const db = require('./conn/query')
 const { CONFIG } = require('../settings/settings')
-//const TABLES = [Admin, Schedule, Posts ]
-const TABLES = [Schedule, Posts]
+//const TABLES = [Admin, Schedule, Posts, Cursos, Disciplinas, Turmas, Docentes ]
+const TABLES = [Cursos, Disciplinas, Turmas, Docentes]
 
 
 const dbRun = () => {

@@ -1,0 +1,162 @@
+<div class="modal" tabindex="-1" id="registerCurso">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"> Registrar Curso</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="/turmas/register/curso" method="post">
+                <div class="modal-body">
+                    <div class="container">
+                        <label for="curso">Curso</label>
+                        <input type="text" name="curso" id="curso" class="form-control">
+                        <label for="CH">CH</label>
+                        <input type="text" name="CH" id="CH" class="form-control">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não Salvar</button>
+                    <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal" tabindex="-1" id="registerTurma">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Registrar Turma</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="/turmas/register/turma" method="post">
+                <div class="modal-body">
+                    <div class="container">
+                        <label for="curso">Selecione o curso</label>
+                        <select name="curso" id="curso" class="form-control">
+                            <option value="">Selecione o curso</option>
+                            {{#each cursos}}
+                            <option value="{{this.curso}}">{{this.curso}} - CH: {{this.CH}}</option>
+                            {{/each}}
+                        </select>
+                        <label for="Turma">Turma</label>
+                        <input type="text" name="turma" id="Turma" class="form-control">
+                        <div class="row">
+                            <div class="col">
+                                <label for="modalidade">Modalidade</label>
+                                <select name="modalidade" id="modalidade" class="form-control">
+                                    <option value="QUALIFICAÇÃO">Qualificação</option>
+                                    <option value="APRENDIZAGEM">Aprendizagem</option>
+                                    <option value="TÉCNICO">Tecnico</option>
+                                </select>
+                            </div>
+                            <div class="col">
+                                <label for="segmento">Segmento</label>
+                                <select name="segmento" id="segmento" class="form-control">
+                                    <option value="PRESENCIAL">Presencial</option>
+                                    <option value="SEMIPRESENCIAL">Semi - Presencial</option>
+                                    <option value="EAD">EAD</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não Salvar</button>
+                    <button type="submit" class="btn btn-primary">Salvar Alterções</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal" tabindex="-1" id="RegisterDisciplina">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Registrar Disciplina</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <label for="">Selecione a Turma</label>
+                            <select name="turma" id="turma" class="form-control">
+                                <option value="turma">Selecione o curso</option>
+                                {{#each turmas}}
+                                <option value="{{this.turma}}">{{this.turma}} - {{this.modalidade}} - {{this.segmento}}</option>
+                                {{/each}}
+                            </select>
+                            <div class="row">
+                                <div class="col-8">
+                                    <label for="disciplinas">Registre a disciplina/modulos</label>
+                                    <input type="text" name="disciplinas" id="disciplinas" class="form-control">
+                                </div>
+                                <div class="col">
+                                    <label for="CH">CH</label>
+                                    <input type="text" name="CH" id="CH" class="form-control">
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <textarea name="OBS" id="OBS" cols="30" rows="5" class="form-control">OBS: </textarea>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não Salvar</button>
+                <button type="button" class="btn btn-primary">Salvar Alterções</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" tabindex="-1" id="RegisterDocenteDisciplina">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Registrar Docente/Disciplina</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <label for="Turma">Turma</label>
+                    <select name="" id="" class="form-control">
+                        <option value="">Selecione a Turma</option>
+                        <option value=""></option>
+                    </select>
+                    <div class="col">
+                        <label for="">Docente</label>
+                        <select name="" id="" class="form-control">
+                            <option value="">Selecione o docente</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <label for="">Unidade/Disciplina</label>
+                        <select name="" id="" class="form-control">
+                            <option value="">Selecione a diciplina</option>
+                        </select>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="">Data Inicio</label>
+                            <input type="date" name="" id="" class="form-control">
+                        </div>
+                        <div class="col">
+                            <label for="">Data Fim</label>
+                            <input type="date" name="" id="" class="form-control">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não Salvar</button>
+                <button type="button" class="btn btn-primary">Salvar Alterções</button>
+            </div>
+        </div>
+    </div>
+</div>
